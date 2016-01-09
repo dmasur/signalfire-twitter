@@ -1,0 +1,6 @@
+signalfire_twitter.admin:
+  title: 'Twitter'
+  description: 'Manage settings for Signalfire Twitter module'
+  parent: system.admin_config_services
+  route_name: signalfire_twitter.tweets_form
+  weight: 100

@@ -1,0 +1,10 @@
+{
+  "name": "drupal/signalfire_twitter",
+  "description": "This module integrates with Twitter",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "homepage": "http://www.signalfire.co.uk",
+  "require": {
+    "abraham/twitteroauth":"0.6.2"
+  }
+}

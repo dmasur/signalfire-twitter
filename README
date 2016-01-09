@@ -1,0 +1,17 @@
+# Twitter Drupal 8
+
+A Drupal 8 module to connect to Twitter Rest API to collect the latest tweets
+(up-to 10) from a particular users timeline. 
+
+You will need to create an app at http://dev.twitter.com/apps in order to use 
+this and will require consumer_key, consumer_key_secret, access_token and
+access_token_secret.
+
+This module is my first Drupal 8 module and came about from an upgrade of my
+current site from D7 to D8. The module I was using for Twitter has yet to be (at
+time of writing) ported.
+
+The module caches tweets for a period of 10 minutes so you will need to purge
+the cache to see any tweets added during this period.
+
+The module makes use of the external library abraham/twitteroauth (https://github.com/abraham/twitteroauth) and uses composer and drupal 8 (https://www.drupal.org/project/composer_manager) for this.

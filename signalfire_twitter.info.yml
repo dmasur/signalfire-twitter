@@ -1,0 +1,6 @@
+name: Signalfire Twitter
+description: Simple module to display the last x updates for an account on twitter
+package: custom
+type: module
+version: 1.0
+core: 8.x

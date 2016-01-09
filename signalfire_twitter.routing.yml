@@ -1,0 +1,10 @@
+signalfire_twitter.tweets_form:
+  path: '/admin/config/signalfire_twitter/tweets'
+  defaults:
+    _form: '\Drupal\signalfire_twitter\Form\TweetsForm'
+    _title: 'Twitter'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
