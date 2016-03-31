@@ -15,3 +15,4 @@ The module caches tweets for a period of 10 minutes so you will need to purge
 the cache to see any tweets added during this period.
 
 The module makes use of the external library abraham/twitteroauth (https://github.com/abraham/twitteroauth) and uses composer and drupal 8 (https://www.drupal.org/project/composer_manager) for this.
+
