@@ -9,6 +9,7 @@ namespace Drupal\signalfire_twitter\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Abraham\TwitterOAuth\TwitterOAuth;
+use Drupal\Core\Site\Settings;
 
 /**
  * Provides a 'TweetsBlock' block.
@@ -114,6 +115,15 @@ class TweetsBlock extends BlockBase {
           $config->get('access_token'),
           $config->get('access_token_secret')
         );
+
+        if(is_array(Settings::get('http_client_config'))){
+          $proxy = preg_split("/:/", Settings::get('http_client_config')['proxy']['https']);
+          $connection->setProxy([
+              'CURLOPT_PROXY' => $proxy[0],
+              'CURLOPT_PROXYPORT' => $proxy[1],
+              'CURLOPT_PROXYUSERPWD' => ''
+          ]);
+        }
 
         // Get the tweets for the user
         $tweets = $connection->get(
