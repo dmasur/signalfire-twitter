@@ -54,11 +54,11 @@ class TweetsBlock extends BlockBase {
   }
 
   private function convert_atsigns($tweet){
-    return preg_replace("/@([A-Za-z0-9\/\.]*)/", "<a href=\"http://www.twitter.com/$1\">@$1</a>", $tweet);
+    return preg_replace("/@([\S]*)/", "<a href=\"http://www.twitter.com/$1\">@$1</a>", $tweet);
   }
 
   private function convert_hashtags($tweet){
-    return preg_replace("/#([A-Za-z0-9\/\.]*)/", "<a target=\"_new\" href=\"http://twitter.com/search?q=$1\">#$1</a>", $tweet);
+    return preg_replace("/#([\S]*)/", "<a target=\"_new\" href=\"http://twitter.com/search?q=$1\">#$1</a>", $tweet);
   }
 
   private function convert_links($tweet){
