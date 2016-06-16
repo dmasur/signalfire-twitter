@@ -162,6 +162,7 @@ class TweetsBlock extends BlockBase {
 
       // Check if there are any tweets to display
       if (count($tweets) > 0){
+        $date_formatter = \Drupal::service('date.formatter');
 
         // There are tweets so iterate over then
         foreach($tweets as $tweet){
@@ -172,7 +173,7 @@ class TweetsBlock extends BlockBase {
             '#markup' => sprintf(
               '<span class="text">%s</span><span class="date">%s</span>',
               $this->format_tweet_with_links($tweet->text),
-              date('jS F Y H:i',strtotime($tweet->created_at))
+              $date_formatter->format(strtotime($tweet->created_at))
             ),
             '#wrapper_attributes' => ['class'=>'tweet']
           ];
